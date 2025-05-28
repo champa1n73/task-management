@@ -2,7 +2,7 @@ pipeline {
     agent any
     environment {
         FRONTEND_VERCEL_HOOK_URL = 'https://api.vercel.com/v1/integrations/deploy/prj_gAdZWm3ucSLoMnUK3vbt2QyNA6GH/Ty8v3ngsfV'
-        BACKEND_VERCEL_HOOK_URL = 'https://api.vercel.com/v1/integrations/deploy/prj_PlOH7HJRyM1P0TPNATSdUnmPY8An/sV5OJLs8rB'
+        BACKEND_VERCEL_HOOK_URL = 'https://api.vercel.com/v1/integrations/deploy/prj_tJHIXKmPadZKEvQUAg6JQco9lIWT/sB1yfJAb4y'
     }
     stages {
         stage('Clean Workspace') {
