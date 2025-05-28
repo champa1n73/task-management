@@ -31,7 +31,7 @@ pipeline {
 
         stage('Tests') {
             steps {
-                dir('backend') {
+                dir('server') {
                     bat "npm install --save-dev supertest"
                     bat "npm test"
                 }
