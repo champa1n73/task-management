@@ -4,7 +4,6 @@ pipeline {
         FRONTEND_VERCEL_HOOK_URL = 'https://api.vercel.com/v1/integrations/deploy/prj_gAdZWm3ucSLoMnUK3vbt2QyNA6GH/Ty8v3ngsfV'
         BACKEND_VERCEL_HOOK_URL = 'https://api.vercel.com/v1/integrations/deploy/prj_PlOH7HJRyM1P0TPNATSdUnmPY8An/sV5OJLs8rB'
     }
-
     stages {
         stage('Git Checkout') {
             steps {
@@ -21,18 +20,10 @@ pipeline {
             }
         }
 
-        stage('Install Dependencies Backend') {
+        stage('Install & Test Backend') {
             steps {
                 dir('server') {
-                    bat "npm install"
-                }
-            }
-        }
-
-        stage('Tests') {
-            steps {
-                dir('server') {
-                    bat "npm install --save-dev supertest"
+                    bat "npm install"  // should install dev dependencies including supertest
                     bat "npm test"
                 }
             }
