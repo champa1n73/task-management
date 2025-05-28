@@ -1,16 +1,18 @@
 {
   "version": 2,
   "builds": [
-    {
-      "src": "index.js",
-      "use": "@vercel/node"
-    }
+    { "src": "api/index.js", "use": "@vercel/node" }
   ],
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "/index.js",
+      "dest": "/api/index.js",
       "methods": ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"]
     }
-  ]
+  ],
+  "git": {
+    "deploymentEnabled": {
+      "main": false
+    }
+  }
 }
