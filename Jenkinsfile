@@ -17,7 +17,7 @@ pipeline {
             }
         }
 
-        stage('Build Frontend') {
+        stage('Build Frontend & Test') {
             steps {
                 dir('frontend') {
                     bat "npm install"
