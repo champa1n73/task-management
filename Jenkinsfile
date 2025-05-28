@@ -9,7 +9,7 @@ pipeline {
             steps {
                 cleanWs()
             }
-    }   
+        }   
 
         stage('Git Checkout') {
             steps {
@@ -22,6 +22,7 @@ pipeline {
                 dir('frontend') {
                     bat "npm install"
                     bat "npm run build"
+                    bat "npm test"
                 }
             }
         }
