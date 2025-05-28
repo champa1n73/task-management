@@ -5,6 +5,12 @@ pipeline {
         BACKEND_VERCEL_HOOK_URL = 'https://api.vercel.com/v1/integrations/deploy/prj_PlOH7HJRyM1P0TPNATSdUnmPY8An/sV5OJLs8rB'
     }
     stages {
+        stage('Clean Workspace') {
+            steps {
+                cleanWs()
+            }
+    }   
+
         stage('Git Checkout') {
             steps {
                 git branch: 'main', url: 'https://github.com/champa1n73/task-management.git'
