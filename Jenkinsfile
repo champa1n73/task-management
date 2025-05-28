@@ -29,6 +29,15 @@ pipeline {
             }
         }
 
+        stage('Tests') {
+            steps {
+                dir('backend') {
+                    bat "npm install --save-dev supertest"
+                    bat "npm test"
+                }
+            }
+        }
+
         stage('Deploy to Vercel') {
             steps {
                 bat "curl -X POST %FRONTEND_VERCEL_HOOK_URL%"
