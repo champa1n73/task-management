@@ -30,7 +30,7 @@ pipeline {
         stage('Install & Test Backend') {
             steps {
                 dir('server') {
-                    bat "npm install"  // should install dev dependencies including supertest
+                    bat "npm install"  
                     bat "npm test"
                 }
             }
